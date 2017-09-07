@@ -1,4 +1,5 @@
-{	"variables": {
+{
+	"variables": {
 		"project_id": null,
 		"source_image": null,
 		"machine_type": "f1-micro",
@@ -37,6 +38,17 @@
 			"type": "shell",
 			"script": "scripts/install_mongodb.sh",
 			"execute_command": "sudo {{.Path}}"
+		},
+		{
+			"type": "shell",
+			"script": "files/deploy.sh"
+		},
+		{
+			"type": "shell",
+			"script": "files/puma-server.sh",
+			"execute_command": "sudo {{.Path}}"
 		}
+
 	]
+
 }
