@@ -1,0 +1,11 @@
+{
+	"project_id": "quantum-toolbox-178405",
+	"source_image": "ubuntu-1604-xenial-v20170815a",
+	"machine_type": "f1-micro",
+	"disk_size": "15",
+	"disk_type": "pd-standard",
+	"image_description": "reddit-app-image",
+	"image_family": "ubuntu-reddit-app",
+	"network": "default",
+	"tags": "puma-server"
+}
