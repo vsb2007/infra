@@ -1,0 +1,18 @@
+data "terraform_remote_state" "foo" {
+  backend = "gcs"
+
+  config {
+    bucket      = "vsb2007_terraform"
+    path        = "infra/terraform.tfstate"
+    project     = "${var.project}"
+    credentials = "${file(".terraform/account.json")}"
+  }
+}
+
+resource "template_file" "bar" {
+  template = "${greeting}"
+
+  vars {
+    greeting = "${data.terraform_remote_state.foo.greeting}"
+  }
+}
