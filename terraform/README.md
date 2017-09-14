@@ -1,7 +1,7 @@
 # Terraform
 
  Remote Backend works if creadentals are given by env varible.
- E.G. export GOOGLE_CREDENTIALS=$(cat ~/.gce/gce-terraform-key.json)
+ E.G. export GOOGLE_CREDENTIALS=$(cat account.json)
 
  backends.tf - config file
 
