@@ -47,6 +47,44 @@
     with_items:
       - mongodb-org
 
+#Create instance
+- name: "create instance reddit_app"
+  hosts: localhost
+  connection: local
+  vars:
+    project_id: "infra-179306"
+    image_family: "reddit-app-base"
+    network: "default"
+    tags: "puma-server"
+    machine_type: "f1-micro"
+    zone: "europe-west1-d"
+    service_account_email: "714325783832-compute@developer.gserviceaccount.com"
+    credentials_file: "../packer/account.json"
+    image: reddit-base-1505706715
+
+  tasks:
+  - name: create instance
+    gce:
+      instance_names: "reddit-app"
+      zone: "{{ zone }}"
+      machine_type: "{{ machine_type }}"
+#      image_family: "{{ image_family }}"
+      image: "{{ image }}"
+      state: present
+      project_id: "{{ project_id }}"
+      service_account_email: "{{ service_account_email }}"
+      credentials_file: "{{ credentials_file }}"
+    register: gce
+
+  - name: Wait for SSH to come up
+    wait_for: host={{ item.public_ip }} port=22 delay=10 timeout=60
+    with_items: "{{ gce.instance_data }}"
+
+  - name: Add host to groupname
+    add_host: hostname={{ item.public_ip }} groupname=reddit_app
+    with_items: "{{ gce.instance_data }}"
+
+
 # Deploy reddit app
 - name: "Reddit App: Deploy application"
   hosts: reddit_app
