@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = "${file("../account.json")}"
+#  credentials = "${file("../account.json")}"
   project     = "${var.project}"
   region      = "${var.region}"
 }
@@ -18,5 +18,5 @@ module "db" {
 
 module "vpc" {
   source        = "../modules/vpc"
-  source_ranges = ["81.1.241.2"]
+  source_ranges = ["0.0.0.0/0"]
 }
