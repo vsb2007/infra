@@ -8,7 +8,9 @@ cp gce.ini ~/ansible/
 #Configure gce.ini
 
 gce_service_account_email_address = # Service account email found in ansible json file
+
 gce_service_account_pem_file_path = # Path to ansible service account json file
+
 gce_project_id = # Your GCE project name
 
 #Export gce.ini environment variable
