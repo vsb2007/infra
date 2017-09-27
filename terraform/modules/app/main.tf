@@ -39,3 +39,16 @@ resource "google_compute_firewall" "firewall_puma" {
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["reddit-app"]
 }
+
+resource "google_compute_firewall" "firewall_http" {
+  name    = "infra-allow-http"
+  network = "default"
+
+  allow {
+    protocol = "${var.http_protocol}"
+    ports    = "${var.http_ports}"
+  }
+  target_tags   = ["reddit-app"]
+  source_ranges = ["0.0.0.0/0"]
+
+}

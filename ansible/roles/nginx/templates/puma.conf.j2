@@ -1,0 +1,10 @@
+# {{ ansible_managed }}
+upstream backend {
+  server {{ puma_host }};
+}
+server {
+  server_name {{ item.value.server_name }};
+  location / {
+    proxy_pass http://backend;
+  }
+}
