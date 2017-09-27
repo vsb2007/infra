@@ -1,6 +1,7 @@
 ---
 - name: Configure MongoDB
-  hosts: tag_reddit-db
+  #hosts: tag_reddit-db # for dynamic inv
+  hosts: db
   become: true
   roles:
     - db

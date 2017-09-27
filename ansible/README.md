@@ -18,3 +18,13 @@ gce.py --list
 
 #Change ansible.cfg
 hostfile = inventory/gce.py
+
+# Ansible commands
+
+$ ansible-playbook -i environments/prod/hosts site.yml --check
+or
+$ ansible-playbook site.yml --check
+
+# Install Roles from Galaxy
+$ ansible-galaxy install --roles-path . jdauphant.nginx
+

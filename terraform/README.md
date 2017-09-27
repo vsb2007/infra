@@ -11,5 +11,7 @@ terraform plan
 
 terraform apply
 
+terraform output
+
 terraform destroy
 

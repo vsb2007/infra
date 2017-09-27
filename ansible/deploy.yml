@@ -1,6 +1,7 @@
 ---
 - name: Deploy
-  hosts: tag_reddit-app
+  #hosts: tag_reddit-app # for dynamic inv
+  hosts: app
   tags: deploy-tag
   tasks:
     - name: Fetch the latest version of application code

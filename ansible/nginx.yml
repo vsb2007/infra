@@ -1,6 +1,7 @@
 ---
 - name: Nginx
-  hosts: tag_reddit-app
+  #hosts: tag_reddit-app # for dynamic inv
+  hosts: app
   become: true
   tasks:
     - name: Update repositories cache
