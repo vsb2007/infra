@@ -8,3 +8,6 @@ account.json
 gce.ini
 gce.py
 
+# Vagrant
+.vagrant/
+*.logs
