@@ -16,3 +16,13 @@ variable puma_port {
   description = "Puma Server working port"
   default     = ["9292"]
 }
+
+variable http_ports {
+  description = "Allowed http ports"
+  default     = ["80"]
+}
+
+variable http_protocol {
+  description = "Allowed http protocol"
+  default     = "tcp"
+}
