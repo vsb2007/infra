@@ -11,3 +11,9 @@ gce.py
 # Vagrant
 .vagrant/
 *.logs
+*.old
+bin/
+lib/
+local/
+share/
+
