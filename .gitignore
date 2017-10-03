@@ -11,6 +11,7 @@ gce.py
 # Vagrant
 .vagrant/
 *.logs
+*.log
 *.old
 bin/
 lib/
