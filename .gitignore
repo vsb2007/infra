@@ -16,4 +16,6 @@ bin/
 lib/
 local/
 share/
-
+.molecule/
+.cache/
+__pycache__/

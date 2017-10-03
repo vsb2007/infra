@@ -1,0 +1,4 @@
+---
+- name: db
+  src: https://github.com/vsb2007/infra-roles-db
+  version: master
