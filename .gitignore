@@ -20,3 +20,4 @@ share/
 .molecule/
 .cache/
 __pycache__/
+ansible/roles/db/

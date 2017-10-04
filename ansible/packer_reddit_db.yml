@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: no
   become: yes
-  tags: install
 
   roles:
     - db
+
