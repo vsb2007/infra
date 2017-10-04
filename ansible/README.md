@@ -45,3 +45,28 @@ $ ansible-playbook site.yml --check
 ```
 $ ansible-galaxy install --roles-path . jdauphant.nginx
 ```
+
+
+# Testing with Molecule
+
+$ pip install virtualenv
+
+virtualenv ~/infra/ansible
+
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+
+source ./bin/activate
+
+cd ~/infra/ansible/roles/db
+
+molecule init scenario --scenario-name default -r db -d vagrant
+
+molecule create
+
+molecule list
+
+molecule login -h instance
+
+molecule converge
+
+molecule verify

@@ -8,3 +8,16 @@ account.json
 gce.ini
 gce.py
 
+# Vagrant
+.vagrant/
+*.logs
+*.log
+*.old
+bin/
+lib/
+local/
+share/
+.molecule/
+.cache/
+__pycache__/
+ansible/roles/db/
